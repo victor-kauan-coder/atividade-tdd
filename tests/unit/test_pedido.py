@@ -33,6 +33,11 @@ def test_bug3_item_mais_barato(pedido_pequeno):
     assert pedido_pequeno.item_mais_barato().nome == "Pão de queijo"
 
 
+def test_bug4_desconto_subtrai_do_subtotal():
+    pedido = Pedido("Carla", [Item("Marmita", 100.0, 1)])
+    assert pedido.total_com_desconto(10) == 90.0
+
+
 
 # =============================================================
 # PARTE 2 — Implemente com TDD
