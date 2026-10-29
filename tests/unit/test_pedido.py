@@ -69,6 +69,9 @@ def test_contar_frete_gratis_lista_vazia():
 # Requisito 2 — situacao(unidades_indisponiveis) -> str
 # Escreva os testes ANTES de implementar o método
 
+def test_situacao_tudo_disponivel_abaixo_de_50(pedido_pequeno):
+    assert pedido_pequeno.situacao(0) == "Confirmado"
+
 
 
 # Requisito 3 — sugerir_frete_gratis(sms_service) -> None
