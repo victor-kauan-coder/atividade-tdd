@@ -18,6 +18,10 @@ def test_exemplo_quantidade_total(pedido_pequeno):
 # no código original. Não altere src/pedido/pedido.py ainda.
 # =============================================================
 
+def test_bug1_subtotal_considera_quantidade(pedido_pequeno):
+    # 1 x 6,00 + 2 x 4,50 = 15,00
+    assert pedido_pequeno.subtotal() == 15.0
+
 
 
 # =============================================================
