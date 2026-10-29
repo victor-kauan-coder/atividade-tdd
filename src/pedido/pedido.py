@@ -32,6 +32,8 @@ class Pedido:
         return self.subtotal() - self.subtotal() * percentual / 100
 
     def situacao(self, unidades_indisponiveis: int) -> str:
+        if self.tem_frete_gratis():
+            return "Confirmado com frete grátis"
         return "Confirmado"
 
 
