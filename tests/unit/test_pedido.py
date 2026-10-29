@@ -106,3 +106,11 @@ def test_sugerir_frete_gratis_abaixo_de_50_envia_sms(pedido_pequeno):
 
     # subtotal 15,00 -> faltam 35,00
     sms_service.enviar.assert_called_once_with("Bruno", 35.0)
+
+
+def test_sugerir_frete_gratis_acima_de_50_nao_envia_sms(pedido_grande):
+    sms_service = MagicMock()
+
+    pedido_grande.sugerir_frete_gratis(sms_service)
+
+    sms_service.enviar.assert_not_called()
